@@ -1,0 +1,10 @@
+@use "../abstracts" as abs;
+
+@debug abs.$font-main;
+
+body {
+	
+	font-size: abs.$font-size-base;
+	font-family: abs.$font-main;
+	background-color: white;
+}

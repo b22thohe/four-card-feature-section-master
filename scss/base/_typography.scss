@@ -1,0 +1,19 @@
+@use "../abstracts" as abs;
+
+.poppins-extralight {
+	font-family: abs.$font-main;
+	font-weight: 200;
+	font-style: normal;
+}
+
+.poppins-regular {
+	font-family: abs.$font-main;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.poppins-semibold {
+	font-family: abs.$font-main;
+	font-weight: 600;
+	font-style: normal;
+}
