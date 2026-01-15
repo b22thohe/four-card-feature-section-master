@@ -1,18 +1,5 @@
 @use '../abstracts' as abs;
 
-.grid-card-item {
-	@include abs.center-flex;
-	width: abs.$card-width;
-	height: abs.$card-height;
-	background-color: abs.$card-bg;
-	border-radius: abs.$card-radius;
-	/* INSERT BOX-SHADOW FOR CARD HERE */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem;
-}
-
 /* Place cards in correct grid cells */
 .grid-left {
 	grid-column: 1;
@@ -32,6 +19,23 @@
 	grid-row: 3;
 }
 
+.grid-card-item {
+	@include abs.center-flex;
+	width: abs.$card-width;
+	height: abs.$card-height;
+	background-color: abs.$card-bg;
+	border-radius: abs.$card-radius;
+	/* INSERT BOX-SHADOW FOR CARD HERE */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	
+	&.card-border {
+		border-top: abs.$card-top-border-size abs.$card-top-border-style var(--card-border-color);	
+	}
+}
+
 /* Adjust on mobile screen */
 @include abs.respond(abs.$mobile-breakpoint) {
 	.grid-card-item {
@@ -40,4 +44,13 @@
 		height: auto;
 		padding: 1rem 1.25rem;	
 	}
+}
+
+.card__body {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content:center;
 }

@@ -1,0 +1,13 @@
+	@use '../abstracts' as abs;
+
+// Generate classes and data-attribute selectors that set the CSS variable
+@each $name, $color in abs.$card-border-colors {
+	.card-#{$name} {
+		--card-border-color: #{$color};	
+	}
+	
+	// Semantic data-attribute
+	[data-card-color-theme="#{$name}"s] {
+		--card-border-color: #{$color};	
+	} 
+}

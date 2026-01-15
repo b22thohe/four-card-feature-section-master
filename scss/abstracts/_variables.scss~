@@ -5,18 +5,30 @@ $gap: 2 rem !default;
 $card-bg: white !default;
 
 $max-grid-width: 720px !default;
-$max-stage-height: 460px !default;
+$max-grid-height: 460px !default;
 $mobile-breakpoint: 600px !default;
+
+/* Card specific styling */
+$card-top-border-size: 3px !default;
+$card-top-border-style: solid !default;
+
+// Card border color map
+$card-border-colors: (
+	red: hsl(0, 78%, 62%),
+	cyan: hsl(180, 62%, 55%),
+	orange: hsl(34, 97%, 64%),
+	blue: hsl(212, 86%, 64%)
+) !default;
 
 $card-radius: 12px !default;
 
 /* Insert box-shadows for cards (desktop and mobile) here */
 
 // Primary colors
-$primary-color-red: hsl(0, 78%, 62%);
-$primary-color-cyan: hsl(180, 62%, 55%);
-$primary-color-orange: hsl(34, 97%, 64%);
-$primary-color-blue: hsl(212, 86%, 64%);
+$primary-color-red: ;
+$primary-color-cyan: ;
+$primary-color-orange: ;
+$primary-color-blue: ;
 
 $primary-bg-color: white;
 
