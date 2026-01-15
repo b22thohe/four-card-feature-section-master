@@ -1,8 +1,13 @@
 @use "../abstracts" as abs;
 
+html, body {
+	height: 100%;
+}
+
 body {
-	
 	font-size: abs.$font-size-base;
 	font-family: abs.$font-main;
-	background-color: white;
+	background-color: abs.$primary-bg-color;
+	@include abs.center-flex;
+	padding: 2rem;
 }

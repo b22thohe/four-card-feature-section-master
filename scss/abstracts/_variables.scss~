@@ -1,12 +1,27 @@
+// Grid design tokens
+$card-width: 220px !default;
+$card-height: 140px !default;
+$gap: 2 rem !default;
+$card-bg: white !default;
+
+$max-grid-width: 720px !default;
+$max-stage-height: 460px !default;
+$mobile-breakpoint: 600px !default;
+
+$card-radius: 12px !default;
+
+/* Insert box-shadows for cards (desktop and mobile) here */
+
 // Primary colors
 $primary-color-red: hsl(0, 78%, 62%);
 $primary-color-cyan: hsl(180, 62%, 55%);
 $primary-color-orange: hsl(34, 97%, 64%);
 $primary-color-blue: hsl(212, 86%, 64%);
 
+$primary-bg-color: white;
+
 // Fonts
 $font-main: "Poppins, sans-serif";
-$karra: "poppins, sans-serif";
 
 // Font sizes
 $font-size-base: 15px;

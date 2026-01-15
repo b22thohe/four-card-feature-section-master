@@ -1,0 +1,12 @@
+// Helpers to keep it DRY
+@mixin center-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin respond($max-width) {
+	@media (max-width: $max-width) {
+		@content;	
+	}
+}
