@@ -30,6 +30,10 @@
 	align-items: center;
 	justify-content: center;
 	padding: 1rem;
+	
+	&.card-border {
+		border-top: abs.$card-top-border-size abs.$card-top-border-style var(--card-border-color);	
+	}
 }
 
 /* Adjust on mobile screen */
@@ -49,4 +53,8 @@
 	flex: 1 1 auto;
 	align-items: center;
 	justify-content:center;
+}
+
+.card__body h2 {
+	text-align: left;
 }

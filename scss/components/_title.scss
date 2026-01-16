@@ -1,0 +1,22 @@
+@use '../abstracts' as abs;
+
+.title {
+	font-size: 2rem;
+	line-height: 1.1;
+	text-align: center;
+	
+	&__muted,
+	&__strong {
+		display: block;	
+	}
+	
+	&__muted {
+		color: abs.$grey-muted;
+		font-weight: 400;	
+	}
+	
+	&__strong {
+		color: abs.$grey-strong;
+		font-weight: 500;	
+	}
+}

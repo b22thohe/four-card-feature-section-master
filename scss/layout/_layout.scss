@@ -4,14 +4,13 @@
 .grid-container {
 	width: min(abs.$max-grid-width, 90vw);
 	height: min(abs.$max-grid-height, 70vh);
-	
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
 	grid-template-rows: 1fr auto 1fr;
 	align-items: center;
 	justify-items: center;
 	gap: abs.$gap;
-	
+	margin: 3rem auto;
 	background: transparent;
 }
 

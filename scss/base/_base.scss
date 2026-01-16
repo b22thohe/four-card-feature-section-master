@@ -8,6 +8,9 @@ body {
 	font-size: abs.$font-size-base;
 	font-family: abs.$font-main;
 	background-color: abs.$primary-bg-color;
-	@include abs.center-flex;
 	padding: 2rem;
+}
+
+main {
+	text-align: center;
 }
