@@ -1,8 +1,0 @@
-$primary-color-red: hsl(0, 78%, 62%);
-$primary-color-cyan: hsl(180, 62%, 55%);
-$primary-color-orange: hsl(34, 97%, 64%);
-$primary-color-blue: hsl(212, 86%, 64%);
-
-body {
-	font-size: 15px;
-}
