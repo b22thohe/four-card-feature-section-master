@@ -21,15 +21,14 @@
 
 .grid-card-item {
 	@include abs.center-flex;
-	width: abs.$card-width;
+	width: 100%;
 	height: abs.$card-height;
 	background-color: abs.$card-bg;
 	border-radius: abs.$card-radius;
-	/* INSERT BOX-SHADOW FOR CARD HERE */
+	box-shadow: 0px 7px 18px -2px rgba(0,0,0,0.2);
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
-	padding: 1rem;
 	
 	&.card-border {
 		border-top: abs.$card-top-border-size abs.$card-top-border-style var(--card-border-color);	
@@ -51,6 +50,10 @@
 	flex-direction: column;
 	flex: 1 1 auto;
 	justify-content: flex-start;
+	padding: 1.5rem 1.75rem 1.75rem;
+	gap: 0.5rem;
+	min-height: 0;
+	overflow: auto;
 }
 
 .card__body h2, .card__body p {

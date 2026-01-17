@@ -1,11 +1,11 @@
 // Grid design tokens
-$card-width: 220px !default;
-$card-height: 140px !default;
+$card-width: 400px !default;
+$card-height: 250px !default;
 $gap: 2 rem !default;
 $card-bg: white !default;
 
-$max-grid-width: 720px !default;
-$max-grid-height: 460px !default;
+$max-grid-width: 1200px !default;
+$grid-height: 750px !default;
 $mobile-breakpoint: 600px !default;
 
 /* Card specific styling */
@@ -21,8 +21,6 @@ $card-border-colors: (
 ) !default;
 
 $card-radius: 12px !default;
-
-/* Insert box-shadows for cards (desktop and mobile) here */
 
 $primary-bg-color: hsl(0, 0%, 100%);
 $grey-muted: hsl(212, 6%, 44%);

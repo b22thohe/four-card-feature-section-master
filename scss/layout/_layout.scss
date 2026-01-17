@@ -2,10 +2,11 @@
 
 /* Center the grid inside the viewport */
 .grid-container {
-	width: min(abs.$max-grid-width, 90vw);
-	height: min(abs.$max-grid-height, 70vh);
+	max-width: abs.$max-grid-width;
+	width: 100%;
+	height: abs.$grid-height;
 	display: grid;
-	grid-template-columns: 1fr auto 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr auto 1fr;
 	align-items: center;
 	justify-items: center;
