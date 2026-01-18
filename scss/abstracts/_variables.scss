@@ -31,3 +31,8 @@ $font-main: "Poppins, sans-serif";
 
 // Font sizes
 $font-size-base: 15px;
+
+// Image Icon scaling
+:root {
+	--icon-scaling: clamp(32px, 20.75px + 3vw, 64px);
+}

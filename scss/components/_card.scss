@@ -21,6 +21,7 @@
 
 .grid-card-item {
 	@include abs.center-flex;
+	position: relative;
 	width: 100%;
 	height: abs.$card-height;
 	background-color: abs.$card-bg;
@@ -35,6 +36,15 @@
 	}
 }
 
+/* (Ugly) fix for icon placement when screen is below 968px width (but above 600px) */
+/* Should be redone, possibly by setting grid for card layout instead of flexbox */
+
+@include abs.respond(967px) {
+	.card__body {
+		margin-bottom: clamp(6.5rem, -2.5vw + 100rem, 100%);	
+	}
+}
+
 /* Adjust on mobile screen */
 @include abs.respond(abs.$mobile-breakpoint) {
 	.grid-card-item {
@@ -43,7 +53,16 @@
 		height: auto;
 		padding: 1rem 1.25rem;	
 	}
+	
+	.card__body {
+		margin-bottom: 6.5rem;	
+	}
+	
+	.card__image {
+		width: 64px !important;	
+	}
 }
+
 
 .card__body {
 	display: flex;
@@ -58,4 +77,12 @@
 
 .card__body h2, .card__body p {
 	text-align: left;
+}
+
+.card__image {
+	position: absolute;
+	right: 1rem;
+	bottom: 1.5rem;
+	width: var(--icon-scaling);
+	height: auto;
 }
