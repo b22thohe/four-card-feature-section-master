@@ -5,8 +5,11 @@ html, body {
 	height: 100%;
 }
 
-body {
+html {
 	font-size: abs.$font-size-base;
+}
+
+body {
 	font-family: abs.$font-main;
 	background-color: abs.$primary-bg-color;
 	padding: 2rem;

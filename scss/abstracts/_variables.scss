@@ -32,7 +32,9 @@ $font-main: "Poppins, sans-serif";
 // Font sizes
 $font-size-base: 15px;
 
-// Image Icon scaling
+// Scaling variables
 :root {
-	--icon-scaling: clamp(32px, 20.75px + 3vw, 64px);
+	--icon-scaling: clamp(32px, calc(20.75px + 3vw), 64px);
+	--h1-scaling: clamp(1.4rem, calc(1.188732rem + 0.845070vw), 2rem);
 }
+
