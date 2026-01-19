@@ -1,30 +1,25 @@
 @use "../abstracts" as abs;
 
-/* Center the grid inside the viewport */
+/* Mobile-first: default is a single-column stacked layout */
 .grid-container {
-	max-width: abs.$max-grid-width;
-	width: 100%;
-	height: abs.$grid-height;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr auto 1fr;
-	align-items: center;
-	justify-items: center;
-	gap: abs.$gap;
-	margin: 3rem auto;
-	background: transparent;
-}
+  max-width: abs.$max-grid-width;
+  width: 100%;
+  display: grid;
 
-/* Handling responsive collapse with respond mixin */
-@include abs.respond(abs.$mobile-breakpoint) {
-	.grid-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-		width: 100%;		
-		height: auto;
-		gap: 1rem;
-		padding: 1rem 0;	
-	}
+  /* mobile default: single column */
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: abs.$mobile-gap;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background: transparent;
+
+  /* Desktop and up: switch to 3 columns × 4 rows layout */
+  /* Use abs.$mobile-breakpoint + 1px so desktop styles begin just above mobile breakpoint */
+  @media (min-width: #{abs.$mobile-breakpoint + 1px}) {
+    grid-template-columns: repeat(3, 1fr);
+    /* 4 rows so we can place top/left/right/bottom as needed */
+    grid-template-rows: repeat(4, auto);
+    gap: abs.$gap;
+  }
 }

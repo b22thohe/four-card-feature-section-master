@@ -1,88 +1,103 @@
 @use '../abstracts' as abs;
 
-/* Place cards in correct grid cells */
-.grid-left {
-	grid-column: 1;
-	grid-row: 2;
-}
-.grid-top {
-	grid-column: 2;
-	grid-row: 1;
-}
-
-.grid-right {
-	grid-column: 3;
-	grid-row: 2;
-}
-.grid-bottom {
-	grid-column: 2;
-	grid-row: 3;
-}
-
 .grid-card-item {
-	@include abs.center-flex;
-	position: relative;
-	width: 100%;
-	height: abs.$card-height;
-	background-color: abs.$card-bg;
-	border-radius: abs.$card-radius;
-	box-shadow: 0px 7px 18px -2px rgba(0,0,0,0.2);
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	
-	&.card-border {
-		border-top: abs.$card-top-border-size abs.$card-top-border-style var(--card-border-color);	
-	}
+  position: relative;
+
+  /* Mobile default: stacked flow */
+  grid-column: auto;
+  grid-row: auto;
+  justify-self: stretch;
+
+  &.card-border {
+    border-top: abs.$card-top-border-size abs.$card-top-border-style var(--card-border-color);
+  }
+
+  /* Desktop placements only (apply explicit grid lines on wider screens) */
+  @media (min-width: #{abs.$mobile-breakpoint + 1px}) {
+    /* center by default for placed items */
+    justify-self: center;
+
+    &.grid-top {
+      grid-column: 2;
+      grid-row: 1 / 3; /* rows 1-2 */
+    }
+
+    &.grid-bottom {
+      grid-column: 2;
+      grid-row: 3 / 5; /* rows 3-4 */
+    }
+
+    &.grid-left {
+      grid-column: 1;
+      grid-row: 2 / 4; /* rows 2-3 */
+      justify-self: start;
+    }
+
+    &.grid-right {
+      grid-column: 3;
+      grid-row: 2 / 4; /* rows 2-3 */
+      justify-self: end;
+    }
+  }
+}
+
+/* rest of file unchanged */
+@include abs.respond(967px) {
+  .card__body {
+    margin-bottom: clamp(6.5rem, -2.5vw + 100rem, 100%);
+  }
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  padding: 1.5rem 1.75rem 1.75rem;
+  gap: 0.5rem;
+  min-height: 0;
+  overflow: auto;
+}
+
+.card__body h2, .card__body p {
+  text-align: left;
+}
+
+.card__image {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.5rem;
+  width: var(--icon-scaling);
+  height: auto;
 }
 
 /* (Ugly) fix for icon placement when screen is below 968px width (but above 600px) */
 /* Should be redone, possibly by setting grid for card layout instead of flexbox */
-
 @include abs.respond(967px) {
-	.card__body {
-		margin-bottom: clamp(6.5rem, -2.5vw + 100rem, 100%);	
-	}
+  .card__body {
+    margin-bottom: clamp(6.5rem, -2.5vw + 100rem, 100%);
+  }
 }
-
-/* Adjust on mobile screen */
-@include abs.respond(abs.$mobile-breakpoint) {
-	.grid-card-item {
-		width: 100%;
-		max-width: 460px;
-		height: auto;
-		padding: 1rem 1.25rem;	
-	}
-	
-	.card__body {
-		margin-bottom: 6.5rem;	
-	}
-	
-	.card__image {
-		width: 64px !important;	
-	}
-}
-
 
 .card__body {
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 auto;
-	justify-content: flex-start;
-	padding: 1.5rem 1.75rem 1.75rem;
-	gap: 0.5rem;
-	min-height: 0;
-	overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  padding: 1.5rem 1.75rem 1.75rem;
+  gap: 0.5rem;
+  min-height: 0;
+  overflow: auto;
 }
 
 .card__body h2, .card__body p {
-	text-align: left;
+  text-align: left;
 }
 
 .card__image {
-	position: absolute;
-	right: 1rem;
-	bottom: 1.5rem;
-	width: var(--icon-scaling);
-	height: auto;
+  position: absolute;
+  right: 1rem;
+  bottom: 1.5rem;
+  width: var(--icon-scaling);
+  height: auto;
 }
